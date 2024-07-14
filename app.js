@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const feedRoutes = require('./routes/feed');
 
 const app = express();
+const port = process.env.port || 8080;
+
+
 
 // app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
 app.use(bodyParser.json()); // application/json
@@ -17,4 +20,6 @@ app.use((req, res, next) => {
 
 app.use('/feed', feedRoutes);
 
-app.listen(8080);
+app.listen(port, ()=>{
+    console.log(`Started on Port :: ${port}`);
+});
