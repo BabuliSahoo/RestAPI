@@ -4,8 +4,7 @@ const bodyParser = require('body-parser');
 const feedRoutes = require('./routes/feed');
 
 const app = express();
-const port = process.env.port || 8080;
-
+const port = process.env.PORT;
 
 
 // app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
